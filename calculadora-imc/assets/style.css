@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    margin: 0 auto;
 }
 
 footer {
@@ -13,9 +14,10 @@ footer {
     color: #ffffff;
     text-align: center;
     font-weight: normal;
-    margin: 0;
+    /* margin: 0; */
     word-spacing: 3px;
-    position: absolute;
+    margin-top: 20px;
+    position: fixed;
     width: 100%;
     bottom: 0;
 }
@@ -36,7 +38,7 @@ footer a:active {
 .content {
     display: flex;
     justify-content: space-between;
-    margin: 20px 20px;
+    margin: 20px 20px 38px 20px;
 }
 
 .col {
@@ -45,7 +47,7 @@ footer a:active {
     flex-direction: column;
     align-items: flex-start;
     padding: 25px;
-    margin: 10px;
+    margin-bottom: 10px;
     border: 2px solid #ccc;
     border-radius: 5px;
 }
@@ -125,5 +127,10 @@ button {
 
     .col {
         width: 100%;
+    }
+
+    .footer {
+        position: static;
+        margin-top: 60px;
     }
 }
