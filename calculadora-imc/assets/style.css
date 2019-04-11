@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+footer {
+    background-color:  rgb(186, 144, 226);
+    color: #ffffff;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    word-spacing: 3px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+img {
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:active {
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px;
+}
+
+.col {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+th {
+    background: rgb(223, 223, 223);
+}
+
+td, th {
+    width: 190px;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+
+label, input, p {
+    margin: 5px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+}
+
+input::placeholder {
+    font-family: 'Lato', sans-serif;
+    color: rgb(223, 223, 223);
+}
+
+button {
+    background-color: rgb(130, 69, 187);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.linha1 {
+    padding: 10px;
+    background-color: rgb(227, 168, 235); 
+}
+
+.linha2 {
+    padding: 10px;
+    background-color: rgb(248, 235, 159);
+}
+
+.linha3 {
+    padding: 10px;
+    background-color: rgb(142, 212, 209);
+}
+
+.linha4 {
+    padding: 10px;
+    background-color: rgb(236, 174, 145);
+}
+
+.linha5 {
+    padding: 10px;
+    background-color: rgb(151, 224, 155);
+}
+
+@media (max-width: 500px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+    }
+}

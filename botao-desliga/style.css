@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    margin: 0;
+    background: white;
+}
+
+img {
+    margin-top: 20vh;
+    width: 250px;
+    cursor: pointer;
+}
+

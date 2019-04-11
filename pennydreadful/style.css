@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    text-align: center;
+    color: black;
+    background-image: url(./assets/pennydreadful2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.dflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 320px;
+}
+
+.logo {
+    width: 500px;
+    opacity: 0.5;
+    
+}
+
+.botao {
+    width: 100px;
+    cursor: pointer;
+    /* margin-top: 500px; */
+}
+
