@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+/* body {
+    background: url(./pascoa.jpg);
+    background-repeat: no-repeat;
+    background-image: cover;
+    background-position: center; 
+} */
+
+.container {
+    width: 70%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.dflex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dflex select {
+    width: 20%;
+}
+
+.dflex label {
+    margin-bottom: 20px; 
+    text-transform: uppercase;
+}
+
+.cidade {
+    display: none;
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 50px;
+}
+
+.frase-pascoa {
+    font-family: 'Sacramento', cursive;
+    font-size: 35px;
+}
