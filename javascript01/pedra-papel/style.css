@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+
+.dflex {
+    display: flex;
+    justify-content: center;
+}
+
+.dflex label,
+.dflex input,
+.dflex button,
+.dflex select {
+    margin-right: 10px;
+    margin-top: 10px;
+}
