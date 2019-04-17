@@ -11,8 +11,9 @@ window.addEventListener('DOMContentLoaded', function (event) {
     jogando.addEventListener('click', function (){
 
         const opcoesDoComputador = ['pedra', 'papel', 'tesoura', 'lagarto', 'spock'];
-        const random = Math.floor(Math.random() * opcoesDoComputador.length);
-        const escolhaDoComputador = opcoesDoComputador[random];
+        // const random = Math.floor(Math.random() * opcoesDoComputador.length);
+        // const escolhaDoComputador = opcoesDoComputador[random];
+        const escolhaDoComputador = opcoesDoComputador[Math.floor(Math.random() * opcoesDoComputador.length)];
         const escolhaDoJogador = document.getElementById('opcoesJogador').value;
         const resultado = document.getElementById('resultado');
         const nomeDoJogador = document.getElementById('nomeJogador');
