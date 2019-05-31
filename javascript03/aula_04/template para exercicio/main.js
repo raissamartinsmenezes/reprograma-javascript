@@ -113,16 +113,12 @@ function limpar(value) {
     }
 }
 
-
 var botaoOrdenar = () => {
     var ordenar = fotografias.sort((anterior, atual) => {
         return anterior.posicao < atual.posicao ? -1 : 0
     });
     document.querySelector('.thumbnails').innerHTML = createCards(ordenar);
 }
-
-
-
 
 // += para não sobrescrever o result do map
 
