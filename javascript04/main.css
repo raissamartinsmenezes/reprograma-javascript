@@ -1,0 +1,22 @@
+button{
+    padding: 20px 40px;
+    font-size: 14px;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    /* transform: scale(1);
+    transition: 1s transform ease; */
+    border-radius: 30px;
+}
+
+.verde{
+    background-color:  rgb(134, 216, 134);
+}
+
+.roxo{
+    background-color: plum;
+}
+
