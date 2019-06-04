@@ -26,13 +26,10 @@
 
             const valueInput = document.getElementById('valueInput').value.toLowerCase();
 
-            const returnFilter = nomesNoRole.filter((palavra) => {
-                return palavra.toLowerCase().includes(valueInput) ? console.log('está no rolê') : console.log('não está no rolê')
-            });
+            const returnFilter = nomesNoRole.find((palavra) => palavra.toLowerCase() === valueInput);
+            console.log(returnFilter ? `${returnFilter} tava na rolê` : `${returnFilter} não tava na rolê`)
 
         });
-
-        // https://github.com/lalizita/arrays-reprograma/blob/master/main.js
 
     </script>
 </body>

@@ -12,6 +12,10 @@ button{
     border-radius: 30px;
 }
 
+button.i {
+    margin-right: 10px;
+}
+
 .verde{
     background-color:  rgb(134, 216, 134);
 }
