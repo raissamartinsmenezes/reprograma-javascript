@@ -1,4 +1,4 @@
-const {livros} = autores //autores.livros = livros 
+const {livros} = autores 
 
 const numeroDeLivros = document.getElementById('numeroDeLivros')
 
@@ -8,164 +8,109 @@ const listarLivros = document.getElementById('listarLivros')
 const listarAutores = document.getElementById('listarAutores')
 const listarGenero = document.getElementById('listarGenero')
 
-listarLivros.addEventListener('click', () => {
-  const insertRows = rows => {
-    let table = ''
-    rows.forEach((livros) => {
-      table += `
-        <tr>
-          <td>${livros.livro}</td>
-        </tr>
-      `
-    })
-    return table
-  }
+const showdDisponiveis = propriedade => {
+  document.getElementById('disponiveis').innerHTML = 
+  `
+  <th colspan="3"><span>${propriedade}</span> disponíveis
+  <button id="ordenarAZ"><i class="fas fa-sort-alpha-down"></i></button>
+  <button id="ordenarZA"><i class="fas fa-sort-alpha-up"></i></button>
+  </th>
+  ` 
+} 
 
-  document.getElementById('table').innerHTML = insertRows (autores.livros)
+const insertRows = (rows, propriedade) => {
+  let table = ''
+  rows.forEach((livros) => {
+    table += `
+      <tr>
+        <td colspan="3">${livros[propriedade]}</td>
+      </tr>
+    `
+  })
+  return table
+}
+
+const orderListAZ = (livroA, livroB, propriedade) => {
+    if (livroA[propriedade].toLowerCase() < livroB[propriedade].toLowerCase()) {
+        return -1
+    } if (livroA[propriedade].toLowerCase() > livroB[propriedade].toLowerCase()) {
+        return 1 
+    } return 0
+}
+
+const orderListZA = (livroA, livroB, propriedade) => {
+  if (livroA[propriedade].toLowerCase() < livroB[propriedade].toLowerCase()) {
+      return 1
+  } if (livroA[propriedade].toLowerCase() > livroB[propriedade].toLowerCase()) {
+      return -1 
+  } return 0
+}
+
+listarLivros.addEventListener('click', () => {
+
+  showdDisponiveis('Livros')
+  
+  document.getElementById('table').innerHTML = insertRows (livros, 'livro')
+
+  document.getElementById('ordenarAZ').addEventListener ('click', () => {
+    const listaOrdenada = livros.sort((livroA, livroB) => orderListAZ(livroA, livroB, 'livro'))
+    console.log(listaOrdenada)
+    document.getElementById('table').innerHTML = insertRows (listaOrdenada, 'livro')
+    
+  })
+
+  document.getElementById('ordenarZA').addEventListener ('click', () => {
+    const listaOrdenada = livros.sort((livroA, livroB) => orderListZA(livroA, livroB, 'livro'))
+    console.log(listaOrdenada)
+    document.getElementById('table').innerHTML = insertRows (listaOrdenada, 'livro')
+    
+  })
 
 })
 
 listarAutores.addEventListener('click', () => {
-  const insertRows = rows => {
-    let table = ''
-    rows.forEach((livros) => {
-      table += `
-        <tr>
-          <td>${livros.autor}</td>
-        </tr>
-      `
-    })
-    return table
-  }
 
+  showdDisponiveis('Autores')
+  
+  document.getElementById('table').innerHTML = insertRows (livros, 'autor')
 
-  document.getElementById('table').innerHTML = insertRows (autores.livros)
+  document.getElementById('ordenarAZ').addEventListener ('click', () => {
+    const listaOrdenada = livros.sort((livroA, livroB) => orderListAZ(livroA, livroB, 'autor'))
+    console.log(listaOrdenada)
+    document.getElementById('table').innerHTML = insertRows (listaOrdenada, 'autor')
+    
+  })
+
+  document.getElementById('ordenarZA').addEventListener ('click', () => {
+    const listaOrdenada = livros.sort((livroA, livroB) => orderListZA(livroA, livroB, 'autor'))
+    console.log(listaOrdenada)
+    document.getElementById('table').innerHTML = insertRows (listaOrdenada, 'autor')
+    
+  })
 
 })
 
 listarGenero.addEventListener('click', () => {
-  const insertRows = rows => {
-    let table = ''
-    rows.forEach((livros) => {
-      table += `
-        <tr>
-          <td>${livros.genero}</td>
-        </tr>
-      `
-    })
-    return table
-  }
 
+  showdDisponiveis('Gêneros')
+  
+  document.getElementById('table').innerHTML = insertRows (livros, 'genero')
 
-  document.getElementById('table').innerHTML = insertRows (autores.livros)
+  document.getElementById('ordenarAZ').addEventListener ('click', () => {
+    const listaOrdenada = livros.sort((livroA, livroB) => orderListAZ(livroA, livroB, 'genero'))
+    console.log(listaOrdenada)
+    document.getElementById('table').innerHTML = insertRows (listaOrdenada, 'genero')
+    
+  })
+
+  document.getElementById('ordenarZA').addEventListener ('click', () => {
+    const listaOrdenada = livros.sort((livroA, livroB) => orderListZA(livroA, livroB, 'genero'))
+    console.log(listaOrdenada)
+    document.getElementById('table').innerHTML = insertRows (listaOrdenada, 'genero')
+    
+  })
 
 })
 
 
 
-// const insertRows = rows => {
-//   let table = ''
-//   rows.forEach((livros) => {
-//     table += `
-//       <tr>
-//         <td>${livros.livro}</td>
-//       </tr>
-//     `
-//   })
-//   return table
-// }
-
-// document.getElementById('table').innerHTML = insertRows (autores.livros) 
-
-// const insertRows = rows => {
-//   let table = ''
-//   rows.forEach((livros) => {
-//     table += `
-//       <tr>
-//         <td>${livros.autor}</td>
-//       </tr>
-//     `
-//   }) 
-//   return table
-// }
-
-// --------------------------------------------------------------
-
-// const ordenarLivros = document.getElementById('ordenarLivros')
-
-// ordenarLivros.addEventListener('click', () => {
-//     const listaOrdenada = autores.livros.sort((livroA, livroB) => {
-//         if (livroA.livro.toLowerCase() < livroB.livro.toLowerCase()) {
-//             return -1
-//         } if (livroA.livro.toLowerCase() > livroB.livro.toLowerCase()) {
-//             return 1 
-//         } return 0
-//     })
-
-//     document.getElementById('table-section').innerHTML = insertRows(listaOrdenada) 
-// })
-
-// const ordenarAutores = document.getElementById('ordenarAutores')
-
-// ordenarAutores.addEventListener('click', () => {
-//     const listaOrdenada = autores.livros.sort((livroA, livroB) => {
-//         if (livroA.autor.toLowerCase() < livroB.autor.toLowerCase()) {
-//             return -1
-//         } if (livroA.autor.toLowerCase() > livroB.autor.toLowerCase()) {
-//             return 1 
-//         } return 0
-//     })
-
-//     document.getElementById('table-section').innerHTML = insertRows(listaOrdenada) 
-// })
-
-// const ordenarGenero = document.getElementById('ordenarGenero')
-
-// ordenarGenero.addEventListener('click', () => {
-//     const listaOrdenada = autores.livros.sort((livroA, livroB) => {
-//         if (livroA.genero.toLowerCase() < livroB.genero.toLowerCase()) {
-//             return -1
-//         } if (livroA.genero.toLowerCase() > livroB.genero.toLowerCase()) {
-//             return 1 
-//         } return 0
-//     })
-
-//     document.getElementById('table-section').innerHTML = insertRows(listaOrdenada) 
-// })
-
-
-
-// --------------------------------------------------------
-
-// const orderList = (livroA, livroB, propriedade) => {
-//     if (livroA[propriedade].toLowerCase() < livroB[propriedade].toLowerCase()) {
-//         return -1
-//     } if (livroA[propriedade].toLowerCase() > livroB[propriedade].toLowerCase()) {
-//         return 1 
-//     } return 0
-// }
-
-// const ordenarLivros = document.getElementById('ordenarLivros')
-// const ordenarAutores = document.getElementById('ordenarAutores')
-// const ordenarGenero = document.getElementById('ordenarGenero')
-
-// ordenarLivros.addEventListener('click', () => {
-//     const listaOrdenada = autores.livros.sort((livroA, livroB) => orderList (livroA, livroB, 'livro'))
-//     document.getElementById('table-section').innerHTML = insertRows(listaOrdenada) 
-// })
-
-// ordenarAutores.addEventListener('click', () => {
-//     const listaOrdenada = autores.livros.sort((livroA, livroB) => orderList (livroA, livroB,'autor'))
-//     document.getElementById('table-section').innerHTML = insertRows(listaOrdenada) 
-// })
-
-// ordenarGenero.addEventListener('click', () => {
-//     const listaOrdenada = autores.livros.sort((livroA, livroB) => orderList (livroA, livroB, 'genero'))
-//     document.getElementById('table-section').innerHTML = insertRows(listaOrdenada) 
-// })
-
-// document.getElementById('table').innerHTML = insertRows (autores.livros) 
-// console.log(livros.livro)
-// document.getElementById('table').innerHTML = insertRows (livros.autor) 
-// console.log(livros.autor)
-// document.getElementById('tableGenero').innerHTML += insertRowsGenero(autores.genero) 

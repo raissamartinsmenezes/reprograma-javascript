@@ -7,11 +7,31 @@ body {
     margin: 0 auto;
 }
 
+h1 {
+    color: rgb(89, 37, 138);
+}
+
 table {
     width: 100%;
 }
 
-tr, th {
+td, th, tr {
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+
+button {
     border: none;
-    padding: 25px;
+    border-radius: 5px;
+    background-color: rgb(230, 211, 248);
+    cursor: pointer;
+    padding: 10px;
+}
+
+#disponiveis button {
+    margin-left: 10px;
+}
+
+.desactive {
+    display: none;
 }
