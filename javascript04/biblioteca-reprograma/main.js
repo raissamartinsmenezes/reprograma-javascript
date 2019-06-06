@@ -92,7 +92,13 @@ listarAutores.addEventListener('click', () => {
 
 listarGenero.addEventListener('click', () => {
 
-  showdDisponiveis('Gêneros')
+  showdDisponiveis('Gêneros') 
+
+  // apagar a função acima
+  // criar uma função onde os gêneros e um botão de filtro são mostrados com checkboxes aravés do innerHTML
+  // filtrar o array e mostrar os gêneros sem a repetição de iguais, em um novo array
+  // mostrar esse novo array 
+  // ordenar esse novo array 
   
   document.getElementById('table').innerHTML = insertRows (livros, 'genero')
 
@@ -113,4 +119,56 @@ listarGenero.addEventListener('click', () => {
 })
 
 
+// RESOLUÇÃO DA NINA 
 
+// listarGeneros.addEventListener('click', () => {
+//   document.getElementById('lista').innerHTML = ''
+
+//   document.getElementById('filtroLista').textContent = 'Gêneros disponíveis'
+
+//   const generos = [...new Set(livros.map(x => x.genero))]
+
+//   const ordenarGenero = (gen1, gen2) => {
+//       if (gen1.toLowerCase() < gen2.toLowerCase()){
+//           return -1
+//       } if (gen1.toLowerCase() > gen2.toLowerCase()){
+//           return 1
+//       } 
+//       return 0
+//   };
+
+//   const generoOrdenado = generos.sort((gen1, gen2) => ordenarGenero(gen1, gen2))
+
+//   const mostrarGeneros = (data) => {
+//       return data.map((item) => {
+//           return (
+//               `<label><input type="radio" name="genero" value="${item}">${item}</label>`
+//           )
+//       }).join('');
+//   }
+
+//   document.getElementById('filtroGenero').innerHTML = `${mostrarGeneros(generoOrdenado)}<br><button id='btnFiltroGenero'>Filtrar</button>`;
+
+//   document.getElementById('btnFiltroGenero').addEventListener('click', () => {
+//       let qtdGenero = document.querySelectorAll("input:checked").length;
+
+//       let buscaGenero = document.querySelectorAll("input:checked").value;
+
+//       console.log(buscaGenero)
+//       if (qtdGenero == 0){
+//           document.getElementById('lista').innerHTML = ''
+//       } else {
+//           // let filtroGenero = livros.filter ((item) => {
+//           //     return item.genero == buscaGenero
+//           // })
+//           document.getElementById('lista').innerHTML = 'quase lá'
+//       }
+//   })
+// })
+
+// const limparLista = document.getElementById('limparLista')
+// limparLista.addEventListener('click', () => {
+//     document.getElementById('filtroLista').innerHTML = ''
+//     document.getElementById('filtroGenero').innerHTML = ''
+//     document.getElementById('lista').innerHTML = ''
+// })
