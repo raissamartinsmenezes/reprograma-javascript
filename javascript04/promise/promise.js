@@ -72,7 +72,7 @@ function retornoPromessa(num){
  .catch(reject => console.log({reject}))
 };
 
-// RESOLUÇÃO CAMILA
+// RESOLUÇÃO KAMILA
 
 const numParImpar = data => {
     return new Promise((resolve, reject) => {
